@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project1/constants/colors.dart';
+import 'package:project1/constants/textstyles.dart';
 import 'package:project1/controller/invite_controller.dart';
 
 class CustomBottomSheetWidget extends GetView<InviteController> {
@@ -30,14 +31,15 @@ class CustomBottomSheetWidget extends GetView<InviteController> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(
+                Padding(
+                  padding: const EdgeInsets.only(
                     left: 15,
                     top: 15,
                     bottom: 20,
                   ),
                   child: Text(
                     'Team roles',
+                    style: txtstlObj.nameStyle,
                   ),
                 ),
                 SizedBox(

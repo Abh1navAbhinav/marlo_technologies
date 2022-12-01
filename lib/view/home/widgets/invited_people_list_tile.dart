@@ -12,6 +12,7 @@ class InvitedPeopleListTileWidget extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: 2,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(8.0),
