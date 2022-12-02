@@ -33,11 +33,16 @@ class HomeScreen extends GetView<HomeController> {
         ],
       ),
       body: Column(
-        children: const [
-          SeeAllWidget(),
-          AllPeopleListTileWidget(),
-          SeeAllWidget(),
-          InvitedPeopleListTileWidget(),
+        children: [
+          SeeAllWidget(
+              length: controller.allList[0].data1.contacts.length,
+              text: 'All people'),
+          const AllPeopleListTileWidget(),
+          SeeAllWidget(
+            length: controller.allList[0].data1.invites.length,
+            text: 'Invited people',
+          ),
+          const InvitedPeopleListTileWidget(),
         ],
       ),
       floatingActionButton: FloatingActionButton(

@@ -42,14 +42,23 @@ class InviteScreen extends GetView<InviteController> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      label: Text('Business email'),
+                  child: Form(
+                    key: controller.emailFormKey,
+                    child: TextFormField(
+                      controller: controller.emailcontroller,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        label: Text('Business email'),
+                      ),
+                      keyboardType: TextInputType.emailAddress,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Email is required';
+                        }
+                        return null;
+                      },
                     ),
-                    keyboardType: TextInputType.emailAddress,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onChanged: (value) {},
                   ),
                 ),
               ),
